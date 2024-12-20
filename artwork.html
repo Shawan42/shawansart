@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Shawan</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="assets/css/mainForArt.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html"><strong>Shawan</strong> ART GALLERY</a></h1>
+						<nav><ul><li><a href="#footer" class="icon solid fa-info-circle">About</a></li></ul></nav>
+					</header>
+
+				<!-- Main -->
+				<div id="main"></div>
+
+				<!-- Footer -->
+					<footer id="footer" class="panel">
+						<div class="inner split">
+							<section>
+								<h2>About Me</h2>
+								<p>A website by me</p>
+							</section>
+						</div>
+					</footer>
+				
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script type="module">
+				const p = new URLSearchParams(window.location.search);
+				const nameVal = p.get('data');
+
+				const mainEl = document.getElementById('main');
+
+				const artEl = document.createElement('article'); //create element <article>
+				const imgEl = document.createElement('img'); //create element <img>
+				const h2El = document.createElement('h2'); //create element <h2>
+				const pEl = document.createElement('p'); //create element <p>
+
+				//<article>
+				artEl.setAttribute('class', 'thumb'); // Set the class attribute to 'thumb'
+
+				//<img>
+				imgEl.setAttribute('src', `images/thmb/${nameVal}.png`); // Set the src attribute of <img>
+				imgEl.setAttribute('alt', ''); // Set the alt attribute
+				imgEl.setAttribute('class', 'image');
+					//<h2>
+				h2El.textContent = nameVal;
+					//<p>
+				fetch(`./text/${nameVal}.txt`)
+					.then(response => {
+							if (!response.ok) {
+								throw new Error(`Error: ${response.status}`);
+							}
+							return response.text();
+						})
+						.then(data => {
+							const fileContent = data;
+							pEl.textContent = fileContent;
+						})
+						.catch(error => {
+							console.error('Error reading the file:', error);
+							pEl.textContent = 'Failed to load the file.';
+				});
+					
+				artEl.appendChild(imgEl); //append <img> to <article>
+				artEl.appendChild(h2El); //append <h2> to <article>
+				artEl.appendChild(pEl); //append <p> to <article>
+				mainEl.appendChild(artEl); //append <article> to <main>
+			</script>
+	</body>
+</html>

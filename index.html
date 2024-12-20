@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Shawan</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html"><strong>Shawan</strong> ART GALLERY</a></h1>
+						<nav><ul><li><a href="#footer" class="icon solid fa-info-circle">About</a></li></ul></nav>
+					</header>
+
+				<!-- Main -->
+				<div id="main"></div>
+
+				<!-- Footer -->
+					<footer id="footer" class="panel">
+						<div class="inner split">
+							<section>
+								<h2>About Me</h2>
+								<p>A website by me</p>
+							</section>
+						</div>
+					</footer>
+				
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script type="module">
+				// Import the names array from names.js
+				import { fileNames } from './assets/js/fileNames.js';
+			
+				// Get the container where names will be displayed
+				const mainEl = document.getElementById('main');
+			
+				fileNames.forEach(fileNames => {
+			
+					const artEl = document.createElement('article'); //create element <article>
+					const aEl = document.createElement('a'); //create element <a>
+					const imgEl = document.createElement('img'); //create element <img>
+					const h2El = document.createElement('h2'); //create element <h2>
+					const pEl = document.createElement('p'); //create element <p>
+			
+					//<article>
+					artEl.setAttribute('class', 'thumb'); // Set the class attribute to 'thumb'
+					//<a>
+					aEl.setAttribute('href', `artwork.html?data=${fileNames}`); // Set the href attribute of <a>
+					aEl.setAttribute('class', 'image'); // Set the class attribute to 'image'
+					//<img>
+					imgEl.setAttribute('src', `images/thmb/${fileNames}.png`); // Set the src attribute of <img>
+					imgEl.setAttribute('width', '100%');
+					imgEl.setAttribute('alt', ''); // Set the alt attribute
+					//<h2>
+					h2El.textContent = fileNames;
+					
+					aEl.appendChild(imgEl); //append <img> to <a>
+					artEl.appendChild(aEl); //append <a> to <article>
+					artEl.appendChild(h2El); //append <h2> to <article>
+					mainEl.appendChild(artEl); //append <article> to <main>
+				});
+			
+			  </script>
+	</body>
+</html>
