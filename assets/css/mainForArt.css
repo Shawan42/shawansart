@@ -1,5 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
 @-moz-keyframes spinner {
 	0% {
@@ -173,7 +174,7 @@ mark {
 /* Type */
 
 	body, input, select, textarea {
-		color: #a0a0a1;
+		color: #c2c2c2;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 15pt;
 		font-weight: 300;
@@ -775,39 +776,53 @@ mark {
 			opacity: 1;
             height: calc(40vh - 2em);
 			min-height: 20em;
-			width: 25%;
 		}
 
 			#main .thumb > .image {
 				-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 				background-repeat: no-repeat;
-				border: auto;
+				border: 8px solid rgb(230, 230, 230);
                 max-width: 736px;
+				display: block;
+				margin-top: 3em;
+				margin-left: auto;
+  				margin-right: auto;
+				margin-bottom: 3em;
+				box-shadow: 1.2em 1.2em 4em rgba(0, 0, 0, 0.65);
 			}
 
 			#main .thumb > h2 {
+				font-family: "Kalam", serif;
+				font-weight: 400;
 				pointer-events: none;
 				bottom: 1.875em;
-				font-size: 0.8em;
+				font-size: 1.8em;
 				left: 2.1875em;
 				margin: 0;
+				margin-top: 2em;
+				margin-left: auto;
+  				margin-right: auto;
+				margin-bottom: 1.6em;
+				text-align: center;
 			}
 
 			#main .thumb > p {
 				pointer-events: none;
 				bottom: -0.875em;
-				font-size: 0.8em;
+				font-size: 1em;
+				text-align: justify;
 				left: 2.1875em;
 				margin: 0;
+				width: 80%;
+				margin-top: 1em;
+				margin-left: auto;
+  				margin-right: auto;
+				margin-bottom: 2em;
 			}
 
 		@media screen and (max-width: 1680px) {
 
 			#main .thumb {
-				-moz-transition-delay: 2.075s;
-				-webkit-transition-delay: 2.075s;
-				-ms-transition-delay: 2.075s;
-				transition-delay: 2.075s;
 				height: calc(40vh - 2em);
 				min-height: 20em;
 				width: 100%;
@@ -818,10 +833,6 @@ mark {
 		@media screen and (max-width: 1280px) {
 
 			#main .thumb {
-				-moz-transition-delay: 1.625s;
-				-webkit-transition-delay: 1.625s;
-				-ms-transition-delay: 1.625s;
-				transition-delay: 1.625s;
 				height: calc(40vh - 2em);
 				min-height: 20em;
 				width: 100%;
@@ -832,10 +843,6 @@ mark {
 		@media screen and (max-width: 980px) {
 
 			#main .thumb {
-				-moz-transition-delay: 2.075s;
-				-webkit-transition-delay: 2.075s;
-				-ms-transition-delay: 2.075s;
-				transition-delay: 2.075s;
 				height: calc(28.57143vh - 1.33333em);
 				min-height: 18em;
 				width: 100%;
@@ -846,10 +853,6 @@ mark {
 		@media screen and (max-width: 480px) {
 
 			#main .thumb {
-				-moz-transition-delay: 1.175s;
-				-webkit-transition-delay: 1.175s;
-				-ms-transition-delay: 1.175s;
-				transition-delay: 1.175s;
 				height: calc(40vh - 2em);
 				min-height: 18em;
 				width: 100%;

@@ -1,4 +1,4 @@
-// names.js
+// All names in image file
 const fileNames = [
     "2021_Valentine",
     "Alone",
@@ -125,3 +125,83 @@ const fileNames = [
   ];
 // Export the array so it can be accessed in other files
 export { fileNames };
+
+//Image names for portraits
+const portNames =[
+    "Amica_Mea",
+    "Angel_Of_Dreams",
+    "Another_Smile",
+    "A_Girl",
+    "A_Selfie_Time",
+    "A_Smile",
+    "Beauty_And_Flower",
+    "Bindi",
+    "Blonde_Anime_Girl",
+    "Bong_Girl",
+    "Bong_Woman",
+    "Delicate_Strokes",
+    "Face_Of_Desire",
+    "Face_Of_Thoughts",
+    "Fairytale",
+    "Indian_Girl",
+    "Jessica",
+    "Looking_Back",
+    "Meye",
+    "Padmavati",
+    "Peach",
+    "Pink",
+    "Polo",
+    "Purple",
+    "Queen",
+    "Red_And_Yellow",
+    "Rose_And_Bird",
+    "Satyajit_Ray",
+    "Selfie_Blush",
+    "Shade",
+    "She",
+    "Shiva",
+    "Sky",
+    "Someone_Special",
+    "Sunset_Canvas",
+    "Sun_Kissed",
+    "Tagore",
+    "Tawaif",
+    "The_Dream",
+    "The_Eyes",
+    "The_Way_She_Looked",
+    "The_Woman"
+];
+
+// Export the array so it can be accessed in other files
+export { portNames };
+
+//Image names for portraits
+const adultNames =[
+    "Another_One",
+    "Arms_Of_Lust",
+    "Body",
+    "Breathing",
+    "Desire",
+    "Embrace",
+    "Fairy",
+    "Licking",
+    "Line_Body",
+    "Love_Making",
+    "Natural",
+    "Passion",
+    "Ratavasthapana_Prakarana",
+    "Sea",
+    "Shibari",
+    "Sketchductive",
+    "Taste",
+    "Tight",
+    "Unacceptable",
+    "Vibrant_Desire",
+    "Vibrant_Passion",
+    "Violet",
+    "World_Making"
+];
+
+// Export the array so it can be accessed in other files
+export { adultNames };
+

@@ -23,8 +23,7 @@
 					</header>
 
 				<!-- Main -->
-				<div id="main">
-				</div>
+				<div id="main"></div>
 
 				<!-- Footer -->
 					<footer id="footer" class="panel">
@@ -54,12 +53,12 @@
 			<script src="assets/js/main.js"></script>
 			<script type="module">
 				// Import the names array from names.js
-				import { fileNames } from './assets/js/fileNames.js';
+				import { adultNames } from './assets/js/fileNames.js';
 			
 				// Get the container where names will be displayed
 				const mainEl = document.getElementById('main');
 			
-				fileNames.forEach(fileNames => {
+				adultNames.forEach(adultNames => {
 			
 					const artEl = document.createElement('article'); //create element <article>
 					const aEl = document.createElement('a'); //create element <a>
@@ -70,14 +69,14 @@
 					//<article>
 					artEl.setAttribute('class', 'thumb'); // Set the class attribute to 'thumb'
 					//<a>
-					aEl.setAttribute('href', `artwork.html?data=${fileNames}`); // Set the href attribute of <a>
+					aEl.setAttribute('href', `artwork.html?data=${adultNames}`); // Set the href attribute of <a>
 					aEl.setAttribute('class', 'image'); // Set the class attribute to 'image'
 					//<img>
-					imgEl.setAttribute('src', `images/thmb/${fileNames}.png`); // Set the src attribute of <img>
+					imgEl.setAttribute('src', `images/thmb/${adultNames}.png`); // Set the src attribute of <img>
 					imgEl.setAttribute('width', '100%');
 					imgEl.setAttribute('alt', ''); // Set the alt attribute
 					//<h2>
-					h2El.textContent = fileNames.replaceAll('_', ' ');
+					h2El.textContent = adultNames;
 					
 					aEl.appendChild(imgEl); //append <img> to <a>
 					artEl.appendChild(aEl); //append <a> to <article>

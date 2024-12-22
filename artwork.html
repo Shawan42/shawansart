@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link rel="shortcut icon" href="images\logo.png" type="image/x-icon" />
 		<title>Shawan</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,20 +13,33 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html"><strong>Shawan</strong> ART GALLERY</a></h1>
-						<nav><ul><li><a href="#footer" class="icon solid fa-info-circle">About</a></li></ul></nav>
-					</header>
+				<header id="header">
+					<h1><a href="index.html"><strong>Shawan</strong> ART GALLERY</a></h1>
+					<nav><ul><li>
+						<a href="adult.html">Adult</a>
+						<a href="portrait.html">Portraits</a>
+						<a href="#footer" class="icon solid fa-info-circle">About</a>
+					</li></ul></nav>
+				</header>
 
 				<!-- Main -->
-				<div id="main"></div>
+				<div id="main">
+
+				</div>
 
 				<!-- Footer -->
 					<footer id="footer" class="panel">
 						<div class="inner split">
 							<section>
 								<h2>About Me</h2>
-								<p>A website by me</p>
+								<p>
+									Hi Guys, I am Shawan<br><br>
+									I am just a humble guy creating things. Love to do digital art and will keep everyone updated on my wesite.<br><br>
+									This website is created with the help of <a href="https://html5up.net/">html5up.net</a><br><br>
+									Also, visit my <a href="https://www.deviantart.com/shawan91221">DeviantArt</a> page where I upload all my works.<br><br>
+									Currently I don't have socials but will have soon.<br><br>
+									Thank You For Visiting...
+								</p>
 							</section>
 						</div>
 					</footer>
@@ -49,6 +63,7 @@
 				const imgEl = document.createElement('img'); //create element <img>
 				const h2El = document.createElement('h2'); //create element <h2>
 				const pEl = document.createElement('p'); //create element <p>
+				const pGapEl = document.createElement('p'); //create element <p>
 
 				//<article>
 				artEl.setAttribute('class', 'thumb'); // Set the class attribute to 'thumb'
@@ -57,9 +72,9 @@
 				imgEl.setAttribute('src', `images/thmb/${nameVal}.png`); // Set the src attribute of <img>
 				imgEl.setAttribute('alt', ''); // Set the alt attribute
 				imgEl.setAttribute('class', 'image');
-					//<h2>
-				h2El.textContent = nameVal;
-					//<p>
+				//<h2>
+				h2El.textContent = nameVal.replaceAll('_', ' ');
+				//<p>
 				fetch(`./text/${nameVal}.txt`)
 					.then(response => {
 							if (!response.ok) {
@@ -69,16 +84,19 @@
 						})
 						.then(data => {
 							const fileContent = data;
-							pEl.textContent = fileContent;
+							pEl.innerHTML = fileContent;
 						})
 						.catch(error => {
 							console.error('Error reading the file:', error);
-							pEl.textContent = 'Failed to load the file.';
+							pEl.innerHTML = 'Failed to load the file.';
 				});
+				//<p> gor gap
+				pGapEl.innerHTML = '<br><br>';
 					
-				artEl.appendChild(imgEl); //append <img> to <article>
 				artEl.appendChild(h2El); //append <h2> to <article>
+				artEl.appendChild(imgEl); //append <img> to <article>
 				artEl.appendChild(pEl); //append <p> to <article>
+				artEl.appendChild(pGapEl); //append <p> to <article>
 				mainEl.appendChild(artEl); //append <article> to <main>
 			</script>
 	</body>
