@@ -56,7 +56,24 @@
 			<script type="module">
 				// Import the names array from names.js
 				import { fileNames } from './assets/js/fileNames.js';
-			
+				
+				// Function to apply the Fisher-Yates Shuffle
+				function shuffle(array) {
+
+				// Iterate over the array in reverse order
+				for (let i = array.length - 1; i > 0; i--) {
+
+					// Generate Random Index
+					const j = Math.floor(Math.random() * (i + 1));
+
+					// Swap elements
+					[array[i], array[j]] = [array[j], array[i]];
+					}
+					return array;
+				}
+
+				shuffle(fileNames);
+				
 				// Get the container where names will be displayed
 				const mainEl = document.getElementById('main');
 			
