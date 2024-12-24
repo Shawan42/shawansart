@@ -818,6 +818,14 @@ mark {
 				width: 100%;
 			}
 
+			#main .thumb > .image > .adult {
+				filter: grayscale(100%) blur(8px);
+			}
+
+			#main .thumb > .image > .portrait {
+				filter: grayscale(100%);
+			}
+			
 			#main .thumb > h2 {
 				pointer-events: none;
 				bottom: 1.875em;

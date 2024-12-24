@@ -56,6 +56,8 @@
 			<script type="module">
 				// Import the names array from names.js
 				import { fileNames } from './assets/js/fileNames.js';
+				import { adultNames } from './assets/js/fileNames.js';
+				import { portNames } from './assets/js/fileNames.js';
 				// Function to apply the Fisher-Yates Shuffle
 				function shuffle(array) {
 
@@ -92,6 +94,18 @@
 					//<img>
 					imgEl.setAttribute('src', `images/thmb/${fileNames}.png`); // Set the src attribute of <img>
 					imgEl.setAttribute('width', '100%');
+					//Adult Images filter
+					adultNames.forEach(adultNames => {
+						if(fileNames==adultNames){
+							imgEl.setAttribute('class', 'adult');
+						}
+					})
+					//Portrait Images filter
+					portNames.forEach(portNames => {
+						if(fileNames==portNames){
+							imgEl.setAttribute('class', 'portrait');
+						}
+					})
 					imgEl.setAttribute('alt', ''); // Set the alt attribute
 					//<h2>
 					h2El.textContent = fileNames.replaceAll('_', ' ');
