@@ -823,7 +823,25 @@ mark {
 			}
 
 			#main .thumb > .image > .portrait {
-				filter: grayscale(100%);
+				filter: blur(8px) sepia(100%);
+			}
+
+			#main .thumb > .image > .iconOverlay {
+				pointer-events: none;
+				bottom: 0.8em;
+				font-size: 6em;
+				left: 1.52em;
+				position: absolute;
+				z-index: 1;
+				/*filter: drop-shadow(0.1em 0.1em 0.05em rgb(53, 0, 0));*/
+			}
+			#main .thumb > .image > .iconOverlay > .fa-eye-slash{
+				color: rgb(255, 0, 76);
+				filter: drop-shadow(0.09em 0.1em 0.04em rgba(53, 0, 0, 0.87)) drop-shadow(-0.05em -0.05em 0.04em rgba(255, 216, 247, 0.774));
+			}
+			#main .thumb > .image > .iconOverlay > .fa-user{
+				color: rgb(255, 217, 0);
+				filter: drop-shadow(0.08em 0.1em 0.05em rgba(53, 0, 0, 0.87)) drop-shadow(-0.05em -0.05em 0.05em rgba(255, 227, 149, 0.925));
 			}
 			
 			#main .thumb > h2 {
