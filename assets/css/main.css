@@ -832,8 +832,6 @@ mark {
 				font-size: 6em;
 				left: 1.52em;
 				position: absolute;
-				z-index: 1;
-				/*filter: drop-shadow(0.1em 0.1em 0.05em rgb(53, 0, 0));*/
 			}
 			#main .thumb > .image > .iconOverlay > .fa-eye-slash{
 				color: rgb(255, 0, 76);
